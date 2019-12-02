@@ -1,0 +1,102 @@
+.background{
+    --ion-background-color:#111D12;
+}
+
+.box{
+    background: white;
+    width: 100%;
+    height: 300px;
+    border-radius: 2px;
+    border: 2px solid black;
+    position: auto;
+    overflow: scroll;
+}
+
+ion-button{
+    --ion-background-color:#111D12;
+}
+
+
+ion-header{
+        --ion-background-color:rgb(32, 170, 90);
+}
+
+ion-footer{
+    --ion-background-color:rgb(32, 170, 90);
+}
+.lis {
+    font-family:Arial, Helvetica, sans-serif; 
+    margin:0 auto;
+    font-size:10px;
+    width:50%;
+    padding:10px;
+    background:#111D12;
+  }
+  .lis ul {
+    list-style:none;
+    margin:0;
+    padding:0;    
+  }
+  .lis li {
+    margin:0;
+    padding:0;
+  }
+  .lis [type=radio], .lis [type=checkbox] {
+    display:none;
+  }
+  .lis label {
+    display:block;
+    font-size:16px;
+    line-height:16px;
+    background:rgb(85, 109, 95);
+    text-shadow:1px 1px 1px rgba(255,255,255,0.3);
+    font-weight:700;
+    cursor:pointer;
+    text-transform:uppercase;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+  }
+  .lis ul li label:hover, .lis [type=radio]:checked ~ label, .lis [type=checkbox]:checked ~ label {
+    background:rgb(97, 87, 89);
+    color:rgb(14, 13, 13);
+    text-shadow:1px 1px 1px rgba(15, 14, 14, 0.5)
+  }
+  .lis .content {
+    padding:0 5px;
+    overflow:hidden;
+    border:1px solid #111D12; /* Make the border match the background so it fades in nicely */
+    background: #fff;
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+  }
+  .lis p {
+    color:#333;
+    margin:0 0 10px;
+  }
+  // .accordion h3 {
+  //   color:#333;
+  //   padding:0;
+  //   margin:10px 0;
+  // }
+  
+  
+  /* Vertical */
+  .hor ul li {
+    overflow:hidden;
+    margin:0 0 1px;
+  }
+  .hor ul li label {
+    padding:10px;
+  }
+  .hor [type=radio]:checked ~ label, .hor [type=checkbox]:checked ~ label {
+    border-bottom:0;
+  }
+  
+  .hor ul li .content {
+    height:0px;
+    border-top:0;
+  }
+  .hor [type=radio]:checked ~ label ~ .content, .hor [type=checkbox]:checked ~ label ~ .content {
+    height: 50px;
+    border:1px solid #111D12;
+  }

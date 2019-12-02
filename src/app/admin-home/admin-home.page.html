@@ -1,0 +1,52 @@
+<link rel="manifest" href= "../manifest.json">
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-button (click)="logOut()" slot="end" color="light">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+      <ion-title>
+      Home (Admin)
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="background">
+
+
+
+
+
+
+
+<ion-button style="width: 100%;" class="button" href="/admin-scheduling" color="light">Edit Merit Badges</ion-button>
+<ion-button style="width: 100%;" class="button" href="/admin-trainings" color="light">Edit Trainings/Activities</ion-button>
+<ion-button style="width: 100%;" class="button" href="/upload" color="light">Upload Documents for View</ion-button>
+
+
+
+<div class="lis hor">
+    <ul id="messList">
+      
+      
+     </ul>
+  </div>
+
+  <ion-item color="light">
+  <ion-input type='text' data-key='Author' class='user-input' id="author" placeholder="Author..."></ion-input>
+  </ion-item>
+  <ion-item color="light">
+  <ion-input type='text' data-key='Message' class='user-input' id="message" placeholder="Message..."></ion-input>
+  </ion-item> 
+  <ion-button color="medium" class="btn btn-secondary" id="add-user-btn" (click)="addMessage()"></ion-button>
+    
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons start="end">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

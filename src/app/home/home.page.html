@@ -1,0 +1,40 @@
+<link rel="manifest" href= "../manifest.json">
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-button href="/admin-login" class="button" slot="end" color="light">
+          <ion-icon slot="icon-only" name="log-in"></ion-icon>
+      </ion-button>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="background">
+
+
+<div class="list hort">
+    <ul id="messageList">
+      
+      
+     </ul>
+  </div>
+      
+
+
+
+
+<ion-button (click)="subscribe()" color="light" expand="block">Subscribe</ion-button>
+<ion-button (click)="revokePermission()" color="light" expand="block">Unsubscribe from our notifications :(</ion-button>
+</ion-content>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-buttons start="end">
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>

@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-buttons slot="start">
+              <ion-back-button defaultHref="admin-home"></ion-back-button>
+              </ion-buttons>
+        </ion-buttons>
+        <ion-button (click)="logOut()" slot="end">
+          <ion-icon slot="icon-only" name="log-out"></ion-icon>
+        </ion-button>
+        <ion-title>
+        Messaging
+      </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="background" no-scroll padding>
+
+
+    <ion-input style="margin-top: 20px; width: 40%; border: 2px solid black; border-radius: 2px;" type='text' data-key='Author' class='user-input' id="author" placeholder="Author..."><br>
+      <ion-input style="margin-top: 10px; width: 80%; height: 15%; border: 2px solid black; border-radius: 2px;"  type='text' data-key='Message' class='user-input' id="message"><br>
+      <ion-input type="submit" style="margin-top: 10px; height: 15%;" value="Send" (click) = "addMessage()"> 
+      
+      <div class = "box" id = "box">
+        <div text-center>
+          <h6 style="margin-top:1%; margin-bottom: 0%;">Messages</h6>
+        </div>
+      </div>
+
+
+
+  
+</ion-content>
+
+  <ion-footer>
+      <ion-toolbar>
+        <ion-buttons start="end">
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>

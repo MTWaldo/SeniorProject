@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>
+        Merit Badges
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<script src="merit-badges.js"></script>
+
+
+<ion-content class="background">
+  <div class="divider"></div>
+  <ion-list>
+      <ion-item color="success" style="padding:1px;">
+      <ion-label>Camp</ion-label>
+      <ion-select placeholder="Select Camp" name="camp" id = "camp">
+        <ion-select-option value="OMB">Osage</ion-select-option>
+        <ion-select-option value="CMB">Cherokee</ion-select-option>
+        <ion-select-option value="OVB">OVB</ion-select-option>
+      </ion-select>
+      </ion-item>
+      <ion-item color="success" style="padding:1px;">
+      <ion-label>Area</ion-label>
+      <ion-select placeholder="Select Area" name="area" id = "area" okText="Okay" cancelText="Dismiss">
+        <ion-select-option value="Handicrafts">Handicrafts</ion-select-option>
+        <ion-select-option value="Life2Eagle">Life to Eagle </ion-select-option>
+        <ion-select-option value="NatureLodge">Nature Lodge</ion-select-option>
+        <ion-select-option value="Range">Range</ion-select-option>
+        <ion-select-option value="Scoutcraft">Scoutcraft</ion-select-option>
+        <ion-select-option value="Sports">Sports</ion-select-option>
+        <ion-select-option value="TechCenter">Tech Center</ion-select-option>
+        <ion-select-option value="WaterFront">Water Front</ion-select-option>
+        </ion-select>
+      </ion-item>
+        <ion-button color="primary" expand="block" (click)="searchButton()">Search</ion-button>
+</ion-list>
+
+<ion-list>
+<ion-item color="success" style="padding:1px;">
+<ion-label>Camp</ion-label>
+<ion-select placeholder="Select Option" name="view" id = "view" okText="Okay" cancelText="Dismiss">
+<ion-select-option value="Osage">Osage</ion-select-option>
+<ion-select-option value="Cherokee">Cherokee</ion-select-option>
+<ion-select-option value="OVB">OVB</ion-select-option>
+</ion-select>
+</ion-item>
+<ion-button color="primary" expand="block" (click)="viewAll()">View All</ion-button>
+</ion-list>
+
+
+
+
+<br>
+
+<ion-list>
+    <ion-item color="success" style="padding:1px;">
+    <ion-label>Camp</ion-label>
+    <ion-select placeholder="Select Camp" name="camp2" id = "camp2">
+      <ion-select-option value="OMB">Osage</ion-select-option>
+      <ion-select-option value="CMB">Cherokee</ion-select-option>
+      <ion-select-option value="OVB">OVB</ion-select-option>
+    </ion-select>
+    </ion-item>
+    <ion-item color="success" style="padding:1px;">
+    <ion-label>Session</ion-label>
+    <ion-select placeholder="Select Session" name="session" id = "session" okText="Okay" cancelText="Dismiss">
+      <ion-select-option value="1">1 </ion-select-option>
+      <ion-select-option value="2">2 </ion-select-option>
+      <ion-select-option value="3">3</ion-select-option>
+      <ion-select-option value="4">4</ion-select-option>
+      <ion-select-option value="5">5</ion-select-option>
+      <ion-select-option value="6">6</ion-select-option>
+      </ion-select>
+    </ion-item>
+      <ion-button color="primary" expand="block" (click)="searchSessionButton()">Search By Session</ion-button>
+</ion-list>
+
+
+
+<div class="accord vert">
+  <ul id="mbList">
+
+
+  </ul>
+</div>
+
+
+
+
+
+  </ion-content>
+
+
+  <ion-footer>
+      <ion-toolbar>
+        <ion-buttons start="end">
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>

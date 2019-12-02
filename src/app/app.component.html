@@ -1,0 +1,21 @@
+<link rel="manifest" href= "manifest.json">
+<ion-app>
+    <ion-menu class="navigate" menuId="users" side="start" contentId="content1">
+        <ion-header class="header">
+          <ion-toolbar class="toolbar">
+            <ion-title class="title">Navigate</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-list class="list" *ngFor="let pages of sideMenu">
+          <ion-menu-toggle class="menu" menu="users" auto-hide="true">
+            <ion-item class="items" [routerLink]="pages.url" routerDirection="forward">
+                <ion-icon class="icons" [name]="pages.icon" slot="start"></ion-icon>
+                   {{pages.title}} 
+            </ion-item>
+          </ion-menu-toggle>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+<ion-router-outlet id="content1"></ion-router-outlet>
+</ion-app>

@@ -1,0 +1,172 @@
+<link rel="manifest" href= "../manifest.json">
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+            <ion-back-button defaultHref="admin-home"></ion-back-button>
+          </ion-buttons>
+      <ion-title>
+        Edit Merit Badges
+      </ion-title>
+
+     
+        
+    </ion-toolbar>
+  </ion-header>
+
+
+
+
+  <ion-content class="background" no-scroll padding>
+
+
+        
+
+        
+
+
+
+
+    
+          <!-- add user module -->
+        <div class = "acc ver">
+          <ul>
+            <li>
+              <input type="radio" id="0" name = "radio-accord"/>
+                <label for="0">Add a Merit Badge</label>
+                  <div class = "content" style="overflow:auto">
+                      <ion-item color="light"> 
+                          <ion-list>
+                              <ion-item color="light">
+                              <ion-select name="addCamp" id="addCamp" okText="Okay" cancelText="Dismiss">
+                              <ion-select-option value="Osage">Osage</ion-select-option>
+                              <ion-select-option value="Cherokee">Cherokee</ion-select-option>
+                              <ion-select-option value="OVB">OVB</ion-select-option>
+                              </ion-select>
+                              </ion-item>
+                            </ion-list>
+                      </ion-item>
+                        <ion-item color="light">
+                            <ion-list>
+                                <ion-item color="light">
+                                <ion-select name="addArea" id="addArea" okText="Okay" cancelText="Dismiss">
+                                <ion-select-option value="Handicrafts">Handicrafts</ion-select-option>
+                                <ion-select-option value="Nature Lodge">Nature Lodge</ion-select-option>
+                                <ion-select-option value="Life to Eagle">Life to Eagle</ion-select-option>
+                                <ion-select-option value="Range">Range</ion-select-option>
+                                <ion-select-option value="Scoutcraft">Scoutcraft</ion-select-option>
+                                <ion-select-option value="Sports">Sports</ion-select-option>
+                                <ion-select-option value="Tech Center">Tech Center</ion-select-option>
+                                <ion-select-option value="Water Front">Water Front</ion-select-option>
+                        
+                                </ion-select>
+                                </ion-item>
+                              </ion-list>
+                          </ion-item>
+
+
+                          <ion-item color="light">
+                              <ion-label position="stacked">Merit Badge</ion-label>
+                              <ion-input data-key="Name" class="user-input"></ion-input>
+                            </ion-item>
+                            <ion-item color="light">
+                                <ion-label position="stacked">Time</ion-label>
+                                <ion-input data-key="Time" class="user-input"></ion-input>
+                              </ion-item>
+                              <ion-item color="light">
+                                  <ion-label position="stacked">Session</ion-label>
+                                  <ion-input data-key="Session"  class="user-input"></ion-input>
+                                </ion-item>
+                                <ion-item color="light">
+                                    <ion-label position="stacked">Hours</ion-label>
+                                    <ion-input data-key="Hours" class="user-input"></ion-input>
+                                  </ion-item>
+                                  <ion-item color="light">
+                                      <ion-label position="stacked">Description</ion-label>
+                                      <ion-textarea data-key="Description" class="user-input"></ion-textarea>
+                                    </ion-item>
+                                    <ion-button color="medium" class="btn btn-secondary" id="add-user-btn" (click)="addMBBtnClicked()">Add Merit Badge</ion-button>
+                  </div>
+            </li>
+          </ul>
+        </div>
+
+        <section id="edit-user-module">
+            <form>
+                <div class="acc ver">
+                  <ul>
+                    <li>
+                <input type="radio" id="90901" name = "radio-accord"/>
+                <label for="90901">Edit Merit Badge</label>
+                  <div class = "content" style="overflow:auto">
+              <input type="hidden" class="edit-userid">
+              <ion-item color="light">
+              <ion-label position="stacked">Camp</ion-label>
+              <ion-input data-key="Camp"  class="edit-user-input" id="editCampCHT"></ion-input>
+              </ion-item>
+              <ion-item color="light">
+                  <ion-label position="stacked">Area</ion-label>
+                  <ion-input data-key="Area"  class="edit-user-input"></ion-input>
+                  </ion-item>
+                  <ion-item color="light">
+                      <ion-label position="stacked">Name</ion-label>
+                      <ion-input data-key="Name"  class="edit-user-input"></ion-input>
+                      </ion-item>
+                      <ion-item color="light">
+                          <ion-label position="stacked">Description</ion-label>
+                          <ion-input data-key="Description"  class="edit-user-input"></ion-input>
+                          </ion-item>
+                          <ion-item color="light">
+                              <ion-label position="stacked">Time</ion-label>
+                              <ion-input data-key="Time"  class="edit-user-input"></ion-input>
+                              </ion-item>
+                              <ion-item color="light">
+                                  <ion-label position="stacked">Session</ion-label>
+                                  <ion-input data-key="Session"  class="edit-user-input"></ion-input>
+                                  </ion-item>
+                                  <ion-item color="light">
+                                      <ion-label position="stacked">Hours</ion-label>
+                                      <ion-input data-key="Hours"  class="edit-user-input"></ion-input>
+                                      </ion-item>
+                                      <ion-button color="medium" id="edit-user-btn" (click)="dataSaveBtn()">Save Changes</ion-button>
+                                      </div>
+                                      </li>
+                                      </ul>
+                                    </div>
+            </form>
+          </section>
+ 
+
+          <!-- <ion-button (click)="readOsageData()" id="View_Osage" class="btn btn-secondary" style="background-color: #2e2d33;">Osage Merit Badges</ion-button>
+          <ion-button (click)="readCherokeeData()" id="View_Cherokee" class="btn btn-secondary" style="background-color: #2e2d33;">Cherokee Merit Badges</ion-button>
+          <ion-button (click)="readOVBData()" id="View_OVB" class="btn btn-secondary" style="background-color: #2e2d33;">OVB</ion-button>
+          <ion-button (click)="readOAData()" id="View_OA" class="btn btn-secondary" style="background-color: #2e2d33;">Open Activities</ion-button>
+          <ion-button (click)="readATData()" id="View_AT" class="btn btn-secondary" style="background-color: #2e2d33;">Adult Trainings</ion-button> -->
+          
+          <ion-list>
+            <ion-item color="success">
+            <ion-label>Program</ion-label>
+            <ion-select placeholder="Osage..." name="read" id="read" okText="Okay" cancelText="Dismiss" >
+            <ion-select-option value="Osage">Osage</ion-select-option>
+            <ion-select-option value="Cherokee">Cherokee</ion-select-option>
+            <ion-select-option value="OVB">OVB</ion-select-option>
+
+            </ion-select>
+            </ion-item>
+            <ion-button color="primary" expand="block" (click)="readData()">View</ion-button>
+          </ion-list>
+
+            <div class="acc ver">
+              <ul id="editList">
+            
+            
+              </ul>
+            </div>
+
+  </ion-content>
+
+  <ion-footer>
+      <ion-toolbar>
+        <ion-buttons start="end">
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>

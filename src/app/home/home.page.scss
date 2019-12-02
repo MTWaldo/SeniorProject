@@ -1,0 +1,99 @@
+.background{
+    --ion-background-color:#111D12;
+}
+
+ion-button{
+    --ion-background-color:#111D12;
+}
+
+
+
+
+ion-footer{
+    --ion-background-color:rgb(32, 170, 90);
+}
+
+
+ion-header{
+
+        --ion-background-color:rgb(32, 170, 90);
+}
+
+
+
+.list {
+    font-family:Arial, Helvetica, sans-serif; 
+    margin:0 auto;
+    font-size:10px;
+    width:50%;
+    padding:10px;
+    background:#111D12;
+  }
+  .list ul {
+    list-style:none;
+    margin:0;
+    padding:0;    
+  }
+  .list li {
+    margin:0;
+    padding:0;
+  }
+  .list [type=radio], .list [type=checkbox] {
+    display:none;
+  }
+  .list label {
+    display:block;
+    font-size:16px;
+    line-height:16px;
+    background:rgb(85, 109, 95);
+    text-shadow:1px 1px 1px rgba(255,255,255,0.3);
+    font-weight:700;
+    cursor:pointer;
+    text-transform:uppercase;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+  }
+  .list ul li label:hover, .list [type=radio]:checked ~ label, .list [type=checkbox]:checked ~ label {
+    background:rgb(97, 87, 89);
+    color:rgb(14, 13, 13);
+    text-shadow:1px 1px 1px rgba(15, 14, 14, 0.5)
+  }
+  .list .content {
+    padding:0 5px;
+    overflow:hidden;
+    border:1px solid #111D12; /* Make the border match the background so it fades in nicely */
+    background: #fff;
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+  }
+  .list p {
+    color:#333;
+    margin:0 0 10px;
+  }
+  // .accordion h3 {
+  //   color:#333;
+  //   padding:0;
+  //   margin:10px 0;
+  // }
+  
+  
+  /* Vertical */
+  .hort ul li {
+    overflow:hidden;
+    margin:0 0 1px;
+  }
+  .hort ul li label {
+    padding:10px;
+  }
+  .hort [type=radio]:checked ~ label, .hort [type=checkbox]:checked ~ label {
+    border-bottom:0;
+  }
+  
+  .hort ul li .content {
+    height:0px;
+    border-top:0;
+  }
+  .hort [type=radio]:checked ~ label ~ .content, .hort [type=checkbox]:checked ~ label ~ .content {
+    height: 50px;
+    border:1px solid #111D12;
+  }
