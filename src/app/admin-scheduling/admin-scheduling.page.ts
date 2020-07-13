@@ -43,12 +43,14 @@ public addMBBtnClicked() {
   }
 
   else {
-    console.log("ERROR");
+    console.log("Submitted in default Osage");
   }
 
 
   var Area = ((document.getElementById("addArea") as HTMLIonInputElement).value);
   const addUserInputsUI = document.getElementsByClassName("user-input") as HTMLCollectionOf<HTMLIonInputElement>;
+  //Creates dynamic array called NewUser to grab information from Class names 'user input' and stores, to push information to database.
+  //Some code was repurposed from other functions so you may see repeating variable names
   let NewUser = {};
   for(let i = 0, len = addUserInputsUI.length; i < len; i++){
       let key = addUserInputsUI[i].getAttribute('data-key');
@@ -67,6 +69,7 @@ public readData(): void{
   console.log(check);
 
   var dbRef = firebase.database().ref('OMB');
+  //Logic for which Tree to access. 
   var tree = ''
   if(check==="Osage"){
     dbRef = firebase.database().ref('OMB');
@@ -103,7 +106,9 @@ public readData(): void{
   }
 
   const editListUI = document.getElementById("editList");
+	//temp is created to provide correct label for accordian CSS
   var temp = 1;
+  //Orders alphabetically by name
   dbRef.orderByChild('Name').on("value",snap => {
       editListUI.innerHTML="";
       snap.forEach(childSnap => {
@@ -111,6 +116,7 @@ public readData(): void{
           value = childSnap.val();
           let li = document.createElement("li");
           let editIconUI: any = document.createElement("span");
+		  //Start of Logic for edit button
           editIconUI.class = "acc ver";
           editIconUI.innerHTML = "✎";
           editIconUI.setAttribute("userid", key);
@@ -120,11 +126,13 @@ public readData(): void{
                 document.getElementById('edit-user-module').style.display = "block";
                 document.querySelector<HTMLInputElement>(".edit-userid").value = e.target.getAttribute("userid");
                 e.target.setAttribute("tree",tree);
+				//UserID is set, this references the actual UID referenced in Firebase 
                 var editRef = testRef.child(e.target.getAttribute("userid"));
                 console.log(editRef);
                 var editUserInputsUI = document.querySelectorAll<HTMLInputElement>(".edit-user-input");
                 editRef.on("value",snap => {
                   for (var i = 0, len = editUserInputsUI.length; i < len; i++){
+					//Prepopulates Edit Box
                     var key = editUserInputsUI[i].getAttribute("data-key");
                     editUserInputsUI[i].value = snap.val()[key];
                   }
@@ -154,21 +162,32 @@ public readData(): void{
               }
           })
 
-
+			//Starts logic for Delete button.
           let deleteIconUI: any = document.createElement("span");
           deleteIconUI.class = "acc ver";
           deleteIconUI.innerHTML = " X";
           deleteIconUI.setAttribute("userid",key);
+		  
+		  //Debugging
           console.log("Before Event Listener:");
           console.log(dbRef);
+		  
+		  
+		  
           deleteIconUI.addEventListener("click",(e, remRef = dbRef ) => {
-            console.log("After Event Listener: ");
+			  
+			 //Debugging 
+			console.log("After Event Listener: ");
             console.log(remRef);
+			
+			
+			
             var result = confirm("Are you sure you want to delete from database? This action cannot be undone");
             if(result){
               e.stopPropagation();
               var userID = e.target.getAttribute("userid");
               var editRef = dbRef.child(userID);
+			  //Removes tree with userID name directly from Database. All children that fall under it are deleted 
               editRef.remove();
             }
           });
@@ -178,6 +197,7 @@ public readData(): void{
 
           li.setAttribute("user-key", key);
           editListUI.append(li);
+		  //Temp is incremeted each time information is printed out to make sure the labels stick with radio buttons (logic necessary for onClick)
           ++temp;
       })
   })
@@ -187,7 +207,7 @@ public readData(): void{
 
 }
 
-
+//Save button linked in Edit box on HTML page, saves information to Firebase
 public dataSaveBtn(e){
 
     var userID = document.querySelector<HTMLInputElement>(".edit-userid").value;
@@ -230,6 +250,7 @@ public dataSaveBtn(e){
   editUserInputUI.forEach(function(textField){
     let key = textField.getAttribute("data-key");
     let value = textField.value;
+	//Gets attributes and stores into editedUserObject
     editedUserObject[textField.getAttribute("data-key")] = textField.value;
   });
   console.log(editedUserObject);

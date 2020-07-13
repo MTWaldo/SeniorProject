@@ -8,18 +8,21 @@ import { Component, OnInit } from '@angular/core';
 export class WeatherPage implements OnInit {
   ngOnInit(): void {
     this.weatherBalloon(4105435)
+	//This gets the information stored in this specific weather balloon
   }
 
   constructor() { }
-  key = 'f348ce5303cd85f4b27a3bcd5a5f0558';
+  key = 'f348ce5303cd85f4b27a3bcd5a5f0558';]
+  //generates information based on API key
 
   if(key = '')
   {
-     document.getElementById('temp').innerHTML = ('Remember to add your api key!');
+     document.getElementById('temp').innerHTML = ('No API key');
   } 
   
   public weatherBalloon( cityID ) {
     fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID+ '&appid=' + this.key)  
+	//API returns temperature, desription, and location. 
     .then(function(resp) { return resp.json() }) // Convert data to json
     .then(function(data) {
       console.log(data);

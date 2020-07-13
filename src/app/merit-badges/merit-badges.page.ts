@@ -27,6 +27,7 @@ export class MeritBadgesPage implements OnInit {
   }
 
   public filterOsageBadges(): void {
+	  //Prints out information from Osage Tree
     firebase.database().ref('/OMB').orderByChild('Area').on('value', function(snapshot) {
     console.log(snapshot.val());
     if(snapshot.exists()){
@@ -47,6 +48,7 @@ export class MeritBadgesPage implements OnInit {
   }
 
   public filterCherokeeBadges(): void {
+	  //Prints out information from Cherokee Tree
     firebase.database().ref('/CMB').orderByChild('Area').on('value', function (snapshot){
       console.log(snapshot.val());
       if(snapshot.exists()){
@@ -67,6 +69,7 @@ export class MeritBadgesPage implements OnInit {
   }
   
   public filterOVB(): void {
+	  //Prints out information from OVB Tree
     firebase.database().ref('/OVB').orderByChild('Name').on('value', function (snapshot){
       console.log(snapshot.val());
       if(snapshot.exists()){
@@ -101,6 +104,7 @@ export class MeritBadgesPage implements OnInit {
 
 
     dbRef.child(CampValue).orderByChild('Area').equalTo(AreaValue).once('value',function(snapshot){
+		//Searches by camp, sorts by Area
       if(snapshot.exists()){
         var con = document.createElement('ul');
       var list  = document.getElementById('mbList');
@@ -153,6 +157,7 @@ export class MeritBadgesPage implements OnInit {
 
 
   public viewAll(): void{
+	  //Calls functions by value in Select box on merit badge html page. 
     var v = (document.getElementById("view")) as HTMLIonSelectElement;
     var searchValue = v.value;
     console.log(searchValue);

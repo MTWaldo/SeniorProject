@@ -11,7 +11,7 @@ import { ViewEncapsulation } from '@angular/core';
 })
 export class HomePage {
 
-
+//Prints accordian messages for Messages tree
   public filterMessages(){
     firebase.database().ref('/Messages').orderByChild('Time').on('value', function(snapshot) {
       console.log(snapshot.val());
@@ -33,7 +33,7 @@ export class HomePage {
 
 
   }
- // public fcm: FcmService
+ // public fcm: FcmService, ghost code from cloud messaging
   constructor(public fcm: FcmService) {}
 
   // ionViewDidLoad(){

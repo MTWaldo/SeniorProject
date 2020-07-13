@@ -4,6 +4,8 @@ import { LoadingController, AlertController } from '@ionic/angular';
 import { AuthService } from '../services/user/auth.service';
 import { Router } from '@angular/router';
 
+//These snippets of code came from Jorge Vergara (javebratt.com)
+
 @Component({
   selector: 'app-admin-login',
   templateUrl: './admin-login.page.html',
@@ -24,17 +26,23 @@ export class AdminLoginPage implements OnInit {
  {
     this.loginForm = this.formBuilder.group({
       email: ['',
+		//gives required fields and only accepts email Strings
         Validators.compose([Validators.required, Validators.email])],
       password: [
         '',
+		//Accepts String as password, hiding it as dots.
       Validators.compose([Validators.required, Validators.minLength(6)]),
       ],
     });
    }
+   
+   //Function is connected to form on HTML page, waits for both user and password to have populated fields
    async loginUser(loginForm: FormGroup): Promise<void> {
     if (!loginForm.valid) {
+		//Shows error if missing one field
       console.log('Form is not valid yet, current value:', loginForm.value);
     } else {
+		//presents loading screen for looks
       this.loading = await this.loadingCtrl.create();
       await this.loading.present();
   
@@ -44,6 +52,7 @@ export class AdminLoginPage implements OnInit {
       this.authService.loginUser(email, password).then(
         () => {
           this.loading.dismiss().then(() => {
+			  //redirects to new admin-home page
             this.router.navigateByUrl('/admin-home');
           });
         },
